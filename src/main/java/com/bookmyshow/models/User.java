@@ -27,7 +27,7 @@ public class User {
         name = name1;
         email = email1;
         phoneNumber = phoneNumber1;
-        password = getHashedPassword(password1);
+        password = password1;
     }
 
     public String getHashedPassword(String password1) {
