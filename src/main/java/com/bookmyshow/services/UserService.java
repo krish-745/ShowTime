@@ -23,6 +23,7 @@ public class UserService {
     private ConcurrentHashMap<Long, User> userMap;
 
     public User createUser(User user) {
+    	user.setPassword(getHashedPassword(user.getPassword()));
         User savedUser = userRepository.save(user);
         userMap.put(savedUser.getId(), savedUser);
         return savedUser;
