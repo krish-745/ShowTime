@@ -18,6 +18,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
@@ -216,7 +217,7 @@ public class DataInitializer implements CommandLineRunner {
     private void loadSampleData() {
         // Insert Movies
         Movie movie1 = new Movie("Inception", "Sci-Fi", 148);
-        Movie movie2 = new Movie("Interstellar", "Sci-Fi", 169);
+        Movie movie2 = new Movie("Interstellar", "Space", 169);
         movieRepository.saveAll(Arrays.asList(movie1, movie2));
 
         // Insert Theaters
@@ -275,21 +276,53 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     private List<Movie> fetchNowPlayingMovies() {
-        ResponseEntity<Map> moviesNowPlayingInIndia = tmdbService.getNowPlayingMovies("In", "Hindi");
-        if (HttpStatusCode.valueOf(200).equals(moviesNowPlayingInIndia.getStatusCode())) {
-            ArrayList<Map> result = (ArrayList<Map>) moviesNowPlayingInIndia.getBody().get("results");
-            if (!CollectionUtils.isEmpty(result)) {
-                List<Movie> movieList = result.stream().map(m -> {
+        ResponseEntity<Map> response = tmdbService.getNowPlayingMovies("In", "Hindi");
+        if (response.getStatusCode().is2xxSuccessful()) {
+            List<Map<String, Object>> results = (List<Map<String, Object>>) response.getBody().get("results");
+            if (!CollectionUtils.isEmpty(results)) {
+                return results.stream().map(m -> {
                     Movie movie = new Movie();
                     movie.setName((String) m.get("title"));
                     movie.setOverview((String) m.get("overview"));
-                    movie.setPosterPath(tmdbPosterPath + (String) m.get("poster_path"));
-                    movie.setDuration(m.get("runtime") != null ? ((Number) m.get("runtime")).intValue() : 120); 
+                    movie.setPosterPath(tmdbPosterPath + m.get("poster_path"));
+                    
+                    // Convert genre IDs to names
+                    List<Integer> genreIds = (List<Integer>) m.get("genre_ids");
+                    List<String> genreNames = genreIds.stream()
+                        .map(id -> GENRE_MAP.getOrDefault(id, "Unknown"))
+                        .collect(Collectors.toList());
+                    movie.setGenre(String.join(", ", genreNames));
+                    
+                    // Set default duration
+                    movie.setDuration(180);
+                    
                     return movie;
                 }).collect(Collectors.toList());
-                return movieList;
             }
         }
-        return null;
+        return Collections.emptyList();
     }
+    
+    private static final Map<Integer, String> GENRE_MAP = Map.ofEntries(
+    	    Map.entry(28, "Action"),
+    	    Map.entry(12, "Adventure"),
+    	    Map.entry(16, "Animation"),
+    	    Map.entry(35, "Comedy"),
+    	    Map.entry(80, "Crime"),
+    	    Map.entry(99, "Documentary"),
+    	    Map.entry(18, "Drama"),
+    	    Map.entry(10751, "Family"),
+    	    Map.entry(14, "Fantasy"),
+    	    Map.entry(36, "History"),
+    	    Map.entry(27, "Horror"),
+    	    Map.entry(10402, "Music"),
+    	    Map.entry(9648, "Mystery"),
+    	    Map.entry(10749, "Romance"),
+    	    Map.entry(878, "Science Fiction"),
+    	    Map.entry(10770, "TV Movie"),
+    	    Map.entry(53, "Thriller"),
+    	    Map.entry(10752, "War"),
+    	    Map.entry(37, "Western")
+    	);
+
 }
