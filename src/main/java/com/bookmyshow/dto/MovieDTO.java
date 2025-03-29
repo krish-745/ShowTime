@@ -6,6 +6,7 @@ public class MovieDTO {
     private Long movieId;
     private String name;
     private int duration;
+    private String genre;
     private String overview;
     private String posterPath;
 
@@ -48,4 +49,12 @@ public class MovieDTO {
     public void setPosterPath(String posterPath) {
         this.posterPath = posterPath;
     }
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 }
