@@ -13,13 +13,15 @@ public class Movie {
     private Long movie_id;
     private String name;
     private int duration;
+    private String genre;
 
     @Column(length = 1000)
     private String overview;
     private String posterPath;
 
-    public Movie(String name1, int duration1) {
+    public Movie(String name1, String genre1, int duration1) {
         name = name1;
+        setGenre(genre1);
         duration = duration1;
     }
 
@@ -59,6 +61,14 @@ public class Movie {
     }
 
     public Long getMovie_id() {
-	return movie_id;
+    return movie_id;
     }
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
 }
