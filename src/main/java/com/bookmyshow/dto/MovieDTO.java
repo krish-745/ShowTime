@@ -5,7 +5,6 @@ import jakarta.persistence.Column;
 public class MovieDTO {
     private Long movieId;
     private String name;
-    private String genre;
     private int duration;
     private String overview;
     private String posterPath;
@@ -24,14 +23,6 @@ public class MovieDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
     }
 
     public int getDuration() {
