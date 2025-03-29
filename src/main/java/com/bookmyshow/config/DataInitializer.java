@@ -284,6 +284,7 @@ public class DataInitializer implements CommandLineRunner {
                     movie.setName((String) m.get("title"));
                     movie.setOverview((String) m.get("overview"));
                     movie.setPosterPath(tmdbPosterPath + (String) m.get("poster_path"));
+                    movie.setDuration(m.get("runtime") != null ? ((Number) m.get("runtime")).intValue() : 120); 
                     return movie;
                 }).collect(Collectors.toList());
                 return movieList;
