@@ -35,12 +35,17 @@ public class UserService {
     
     public User getUserByIdAndPassword(Long id, String password) {
         User user = userMap.get(id);
-        String password1 = getHashedPassword(password);
-        if((user.getPassword()).equals(password1))
-        	return user;
-        else {
-        	User user1 = new User();
-        	return user1;
+        
+        if (user == null) {
+            throw new RuntimeException("User not found");
+        }
+        
+        String hashedPassword = getHashedPassword(password);
+        
+        if (user.getPassword().equals(hashedPassword)) {
+            return user; 
+        } else {
+            throw new RuntimeException("Invalid credentials");
         }
     }
 
