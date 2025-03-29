@@ -12,16 +12,14 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long movie_id;
     private String name;
-    private String genre;
     private int duration;
 
     @Column(length = 1000)
     private String overview;
     private String posterPath;
 
-    public Movie(String name1, String genre1, int duration1) {
+    public Movie(String name1, int duration1) {
         name = name1;
-        genre = genre1;
         duration = duration1;
     }
 
@@ -34,14 +32,6 @@ public class Movie {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
     }
 
     public int getDuration() {
@@ -68,7 +58,7 @@ public class Movie {
         this.posterPath = posterPath;
     }
 
-	public Long getMovie_id() {
-		return movie_id;
-	}
+    public Long getMovie_id() {
+	return movie_id;
+    }
 }
