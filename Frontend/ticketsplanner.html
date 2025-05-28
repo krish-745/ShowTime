@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theater Seat Booking</title>
+    <link rel="stylesheet" href="STYLE/ticketsplanner.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Select Your Seats</h1>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box available"></div>
+                <span>Available</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box legend-booked"></div>
+                <span>Booked</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box legend-suggested"></div>
+                <span>Suggested</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box legend-selected"></div>
+                <span>Selected</span>
+            </div>
+        </div>
+
+        <div class="screen"><p>SCREEN</p></div>
+
+        <div class="seating-map" id="seating-map">
+            <!-- Seats will be generated here -->
+        </div>
+
+        <!-- <div class="booking-summary">
+            <h3>Booking Summary</h3>
+            <p>Selected Seats: <span id="selected-seats-text">None</span></p>
+            <p>Total Seats: <span id="total-seats">0</span></p>
+            <button class="booking-button" id="book-button" disabled>Book Selected Seats</button>
+        </div> -->
+
+        <div class="booking-summary">
+            <h3>Booking Summary</h3>
+            <p>Selected Seats: <span id="selected-seats-text">None</span></p>
+            <p>Total Seats: <span id="total-seats">0</span></p>
+            <p><strong>Total Price:</strong> <span id="total-price">₹0</span></p>  <!-- Add this line -->
+            <button class="booking-button" id="book-button" disabled>Book Selected Seats</button>
+        </div>
+        
+    </div>
+
+    <script type = "module" src = "SCRIPT/ticketsplanner.js"></script>
+</body>
+
+</html>

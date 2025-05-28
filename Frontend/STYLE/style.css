@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.search-container {
+    top:60px;
+    position: relative;
+    width: 90%; 
+    margin: 0 auto;
+    max-width: 1500px;
+    background-color: red;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 10px 40px 10px 15px; /* Right padding for button */
+    /* ... keep your other input styles ... */
+    height:40px
+}
+
+.search-container button {
+    position: absolute;
+    right: 15px; /* Adjusted position */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0 8px; /* Button padding */
+}
+body {
+    padding-top: 0px;
+}
+
+.images {
+    margin-top: 60px;
+}
+
+/* Grid layout for images */
+/* .images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px; /* Reduces space between items 
+    padding: 10px;
+    max-width: 100%;
+    row-gap: 30px;
+    justify-content: left;
+}*/
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Strict 5 columns */
+    gap: 20px;
+    padding-top: 80px;
+    /* max-width: 1400px; */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* .images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px; 
+    padding: 20px;
+    justify-content: flex-start; 
+} */
+
+
+/* .room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3px; 
+    width:280px;
+    margin-bottom: 20px;
+} */
+
+/* .room {
+    width: calc(20% - 20px); 
+    max-width: 250px; 
+    margin-left: 42px;
+} */
+
+.room {
+    /* background: #222; */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+/* Image styling */
+.room img {
+    width: 280px;
+    height: 430px;
+    object-fit: cover;
+    border-radius: 5px; 
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+/* Title (Movie Name) */
+.room h3 {
+    margin: 3px 0 1px 0; 
+    font-size: 18px;
+    align-self: center;
+}
+
+.room h3 {
+    padding-left: 70px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Rating text */
+.room p {
+    font-size: 14px;
+    margin: 0; /* Removes unnecessary gaps */
+    color: #555;
+    padding-bottom: 10px;
+}
+
+
+/* Rating text */
+.room p {
+    font-size: 14px;
+    margin: 0; /* Completely removes extra spacing */
+    color: #555;
+}
+.room {
+    cursor: pointer; /* Makes it clear that the item is clickable */
+    transition: transform 0.2s ease-in-out;
+}
+
+.room:hover {
+    transform: scale(1.05); 
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.stylerating {
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    padding-left: 70px;
+}
+.suggestions {
+    position: absolute;
+    top: 100%; /* Positions directly below search bar */
+    left: 0;
+    right: 0;
+    background: #000;
+    border: 1px solid #333;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none; /* Hidden by default */
+}
+
+.suggestions.show {
+    display: block; /* Visible when needed */
+}
+
+.suggestion {
+    width: calc(100% - 2px);
+    padding: 10px 15px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.suggestion:last-child {
+    border-bottom: none;
+}
+
+.suggestion:hover {
+    background: #222;
+}
+
+/*SEARCH BAR STYLING*/
+.search-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #111;
+    color: white;
+}
+
+.search-container button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* .user-icon-container {
+    position: absolute; 
+    top: 10px;
+    left:50px;
+    z-index: 1000;
+} */
+
+/* User Icon Button */
+.user-icon {
+    background: black;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.user-icon:hover {
+    background-color: red;
+    transform: scale(1.1);
+}
+
+.user-icon-container {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    z-index: 1000;
+}

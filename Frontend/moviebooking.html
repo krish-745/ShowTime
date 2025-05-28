@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="STYLE/movies.css">
+</head>
+<body>
+
+    <!-- Fixed Search Bar -->
+    <!-- <div class="search-container">
+        <input type="text" placeholder="Search for movies...">
+    </div> -->
+
+    <!-- Movie Section -->
+    <div class="movie-card">
+        <h2>${movie.name}</h2>
+            <p>${movie.genre}</p>
+            <div class="text"><p class="movie-description">
+                ${movie.overview}
+            </p></div>
+            <div class="book-button"><button class="booknow">Book Now</button></div>
+    </div>
+    <script src ="SCRIPT/moviebooking.js" defer></script>
+
+</body>
+</html>

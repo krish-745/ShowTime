@@ -1,0 +1,88 @@
+/* Modern, elegant styling for seat selection */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.numtick {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    outline: none;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.numtick:focus {
+    border-color: #e51937;
+    box-shadow: 0 4px 20px rgba(229, 25, 55, 0.2);
+    transform: translateY(-2px);
+}
+
+.numtick::placeholder {
+    color: #aaa;
+    font-weight: 300;
+}
+
+.ticketbutton {
+    margin-left: 15px;
+    padding: 15px 30px;
+    background: linear-gradient(to right, #e51937, #c8102e);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(229, 25, 55, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ticketbutton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(229, 25, 55, 0.6);
+    background: linear-gradient(to right, #c8102e, #a80b26);
+}
+
+.ticketbutton:active {
+    transform: translateY(1px);
+}
+
+/* Animation for focus */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(229, 25, 55, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(229, 25, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(229, 25, 55, 0); }
+}
+
+.numtick:focus {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .numtick {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .ticketbutton {
+        margin-left: 0;
+        width: 100%;
+    }
+}

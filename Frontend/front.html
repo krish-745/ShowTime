@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShowTime</title>
+    <link rel="stylesheet" href="STYLE/style.css">  <!-- Linking External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- <div class="search-container">
+        <input type="text" placeholder="Search..." class ="searchbar"/>
+        <button class = "search">&#128270;</button>
+    </div> -->
+    <div class="user-icon-container">
+        <button class="user-icon" onclick="window.location.href='userinfo.html'">
+            <i class="fas fa-user-circle"></i>
+        </button>
+    </div>
+    <div class = "search-container">
+    <input type="text" placeholder="Search for movies..." class="searchbar">
+    <button class="search"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+     </button>
+    </div>
+
+    <!-- <div class="header-wrapper">
+        <div class="search-container">
+            <input type="text" placeholder="Search for movies..." class="searchbar">
+            <button class="search"> 
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"/>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="user-icon-container">
+            <button class="user-icon" onclick="window.location.href='user-profile.html'">
+                <i class="fas fa-user-circle"></i>
+            </button>
+        </div>
+    </div> -->
+
+    <div class="images">
+        <!-- <div class="room" onclick="openPage('pushpa.html')">
+            <img src="IMAGES/pushpa.jpg" alt="Pushpa">
+            <h3>Pushpa</h3>
+            <p>Rating: 4.5</p>
+        </div>
+    
+        <div class="room" onclick="openPage('venom.html')">
+            <img src="IMAGES/venom.jpg" alt="Venom">
+            <h3>Venom</h3>
+            <p>Rating: 4.8</p>
+        </div>
+    
+        <div class="room" onclick="openPage('annabelle.html')">
+            <img src="IMAGES/anna.jpg" alt="Annabelle">
+            <h3>Annabelle</h3>
+            <p>Rating: 4.2</p>
+        </div>
+     -->
+        <div class="room" onclick="openPage('sherlock.html')">
+            <img src="IMAGES/sherlock.jpg" alt="Sherlock Holmes">
+            <h3>Sherlock Holmes</h3>
+            <div class = "stylerating"><p>Rating: 4.9</p></div><div class ="ratingimg"><img src = "https://imgur.com/T4DSCdT"></div>
+        </div>
+    </div>
+    
+    <script src="SCRIPT/movies.js" defer></script>
+    
+
+</body>
+</html>

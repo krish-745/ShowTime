@@ -1,0 +1,123 @@
+/* === Fixed Search Bar === */
+.search-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 12px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.search-container input {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Movie Card (Full-Width Container) */
+.movie-card {
+    display: flex;
+    align-items: center; /* Vertically aligns image and text */
+    gap: 20px; /* Spacing between image and text */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%; /* Takes the full width */
+    margin: 80px 0 20px 0; /* Ensures it's aligned properly */
+    box-sizing: border-box; /* Prevents content from overflowing */
+}
+
+/* Movie Image */
+.movie-image {
+    width: 250px; /* Adjusted image width */
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+.movie-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Movie Details */
+.movie-details {
+    flex-grow: 1; /* Makes text expand to fill available space */
+}
+.movie-details {
+    width: 80%; /* Increase width */
+    max-width: 800px; /* Prevents it from being too large */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+/* Bigger Title */
+.movie-details h2 {
+    font-size: 32px; /* Increased font size */
+    margin: 0;
+}
+
+/* Bigger Description */
+.movie-description {
+    font-size: 20px;
+    color: #444;
+    margin: 10px 0 15px 0;
+    width: 100%; /* Allow full width */
+    max-width: 100%; /* Ensure it expands within its container */
+    text-align: justify; /* Improves readability */
+}
+
+/* Bigger Button */
+.booknow {
+    padding: 14px 24px;
+    font-size: 20px; /* Increased button text */
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    
+}
+
+.booknow:hover {
+    background-color: darkred;
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 500px) {
+    .movie-card {
+        flex-direction: column; /* Stack image and details */
+        text-align: center;
+        align-items: center;
+    }
+
+    .movie-image {
+        width: 100px; /* Reduce size on small screens */
+    }
+}
+.book-button {
+    margin-top: auto; /* Pushes the button to the bottom */
+    position: relative;
+    bottom: 0px;
+}
+.text {
+    width: 100%;  /* Allow full width */
+    display: block;  /* Ensures it takes full space */
+    max-width: 100%; /* Prevents it from being smaller */
+}
+.ratingimg{
+    display:flex;
+}
+
+/* ===== SEARCH SUGGESTIONS ===== */
+.search-container {
+    position: relative; /* Needed for absolute positioning */
+}
+
